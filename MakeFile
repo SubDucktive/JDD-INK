@@ -1,0 +1,9 @@
+CC = clang
+TARGET = bin/jdd-ink.exe
+SRC = src/main.c
+
+all:
+	$(CC) $(SRC) -o $(TARGET)
+
+clean:
+	del bin\jdd-ink.exe
