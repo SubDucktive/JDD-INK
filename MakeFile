@@ -1,8 +1,0 @@
-CC = clang
-TARGET = bin/jdd-ink.exe
-SRC = src/main.c
-INCLUDES = -Ilibs/SDL2/include
-LIBS = -Llibs/SDL2/lib/x64 -lSDL2 -lSDL2main
-
-all:
-	$(CC) $(SRC) $(INCLUDES) $(LIBS) -o $(TARGET)

@@ -1,7 +1,8 @@
 #include <stdio.h>
-#include <SDL.h>
+#include <SDL2/SDL.h>
 
 int main(int argc, char* argv[]){
-    printf_s("hell, INK!");
+    printf("hello, INK!");
+
     return 0;
 }
