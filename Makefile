@@ -1,4 +1,4 @@
-CC = clang
+CC = gcc
 TARGET = bin/jdd-ink
 SRC = src/main.c
 INCLUDES = $(shell sdl2-config --cflags)
