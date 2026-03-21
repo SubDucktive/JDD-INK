@@ -3,9 +3,14 @@
 
 int running = 1;
 
+int rect_x = 0;
+int rect_y = 0;
+int rect_vx = 0;
+int rect_vy = 0;
+
 int main(int argc, char* argv[]){
 
-    if(SDL_Init(SDL_INIT_VIDEO) > 1){
+    if(SDL_Init(SDL_INIT_VIDEO) != 0){
         printf("ERROR! SDL COULD NOT INITIALIZE. SDL ERROR: %s", SDL_GetError());
         return 1;
     }
@@ -34,7 +39,24 @@ int main(int argc, char* argv[]){
 
     SDL_Event e;
 
+    SDL_Rect rect = {
+        rect_x,
+        rect_y,
+        32,
+        32
+    };
+
     while(running){
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+        SDL_RenderClear(renderer);
+        rect_x += rect_vx;
+        rect_y += rect_vy;
+
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+        SDL_RenderFillRect(renderer, &rect);
+
+
+        SDL_RenderPresent(renderer);
         while(SDL_PollEvent(&e)){
             switch(e.type){
                 case SDL_QUIT:
